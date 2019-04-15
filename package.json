@@ -1,0 +1,20 @@
+{
+  "name": "blog2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookies": "^0.7.3",
+    "express": "^4.16.4",
+    "mogoose": "^3.1.8",
+    "mongoose": "^5.4.19",
+    "request": "^2.88.0",
+    "swig": "^1.4.2"
+  }
+}

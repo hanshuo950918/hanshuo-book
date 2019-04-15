@@ -1,0 +1,84 @@
+{%extends 'layout.html'%}
+{%block content%}
+<link rel="stylesheet" href="/public/regist.css">
+<div class="listBox">
+  <h1>{{content.title}}</h1><br />
+  <div class="item">
+    <!-- <img src="/public/img/blog_1.jpg" alt=""> -->
+    <div class="text-content">
+      <!-- <h4>{{content.title}}</h4><br/> -->
+      <span>作者：{{content.user.username}}</span><br />
+      <span>时间：{{content.addTime|date('Y年m月d日 H:i:s',-8*60)}}</span>&nbsp;&nbsp;&nbsp;
+      <span>阅读量：{{content.views}}</span>&nbsp;&nbsp;&nbsp;
+      <span>评论：{{content.comments.length}}</span>
+    </div>
+  </div>
+
+  <dfn>
+    {{content.content|raw}}
+  </dfn>
+</div>
+
+<div class="listBox message">
+  <h3 class="textLeft">
+    <strong>评论</strong>
+    <span class="em">
+      一共有
+      <em id="messageCount">
+        0
+      </em>
+      条评论
+    </span>
+  </h3>
+  {% if userInfo._id%}
+  <p class="textLeft">zmouse</p>
+  <p class="textLeft clear">
+    <input type="text" id="messageContent">
+    <input type="hidden" id="contentId" value="{{content.id}}">
+    <button id="messageBtn" class="submit">提交</button>
+  </p>
+  {%else%}
+  <p class="bgDanger" style="line-height:30px">你还没有登陆，无法评论，<a href="#video">请登陆！</a></p>
+  {%endif%}
+
+  <div class="messageList">
+
+  </div>
+
+  <div class="pager">
+    <ul class="clear">
+      <li class="previous">
+        <a href="">上一页</a>
+      </li>
+
+
+      <li></li>
+
+
+      <li class="next">
+        <a href="">下一页</a>
+      </li>
+
+
+    </ul>
+  </div>
+
+  <!-- <div class="messageList">
+            <div class="messageBox"><p>还没有留言</p></div>
+          </div> -->
+
+  <!-- <div class="messageList" style="display:block">
+            <div class="messageBox">
+              <p class="name clear"><span class="fl">admin</span><span class="fr">2016年07月19日 17：24：01</span></p><p>哈哈</p>
+            </div>
+        </div> -->
+</div>
+<script src="/public/js/vendor/jquery-1.11.2.min.js"></script>
+<script src="/public/js/comment.js"></script>
+
+
+
+
+
+
+{%endblock%}

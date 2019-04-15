@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Sentra HTML CSS Template</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="/public/main.css">
+       
+        <link rel="stylesheet" href="/public/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="/public/fontAwesome.css">
+        <link rel="stylesheet" href="/public/light-box.css">
+        <link rel="stylesheet" href="/public/owl-carousel.css">
+        <link rel="stylesheet" href="/public/templatemo-style.css">
+        <link rel="stylesheet" href="/public/regist.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <script src="/public/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+
+<body>
+
+
+
+        <header class="nav-down responsive-nav hidden-lg hidden-md">
+            <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--/.navbar-header-->
+            <div id="main-nav" class="collapse navbar-collapse">
+                <nav>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#top">Home</a></li>
+                        <li><a href="#featured">Featured</a></li>
+                        <li><a href="#projects">Recent Projects</a></li>
+                        <li><a href="#video">Presentation</a></li>
+                        <li><a href="#blog">Blog Entries</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="sidebar-navigation hidde-sm hidden-xs">
+            <div class="logo">
+                <a href="#">韩硕的博客</a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#video">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            登陆注册
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#blog">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            博客全文
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            联系我
+                        </a>
+                    </li>
+                    <!-- {%for category in categories%}
+                    <a href="">{{category.name}}</a>
+                    {%endfor%} -->
+                </ul>
+            </nav>
+            <ul class="social-icons">
+                <li><a href="https://weibo.com/u/5514084791/home?wvr=5"><i class="fa fa-weibo"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+            </ul>
+        </div>
+
+         
+
+        <div class="page-content">
+             
+               
+            </section>
+
+             
+            <section id="video" style="padding:20px 60px" class="content-section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-heading">
+                            <h1>欢迎  <em>加入</em> 我们</h1>
+                            <!-- <p>Praesent pellentesque efficitur magna, sed pellentesque neque malesuada vitae.</p> -->
+                        </div>
+                        <div class="text-content">
+                            <!-- <p>In eget ipsum sed lorem vehicula luctus. Curabitur non dolor rhoncus, hendrerit justo sit amet, vestibulum turpis. Pellentesque id auctor tellus, vel ultricies augue. Duis condimentum aliquet blandit. Fusce rhoncus et eros ut pharetra. Phasellus convallis ultricies ligula ac gravida.</p> -->
+                        </div>
+                        <div class="accent-button button">
+                            <a href="#blog">关于我</a>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="box-video">
+                            <div class="video-container" style="height:200px;">
+
+
+                              {% if userInfo._id %}
+                              <div class="yonghuxinxi">
+                                <div class="title"><span>用户信息</span></div>
+                                <p><span class="colDark username">{{userInfo.username}}</span></p>
+                                {% if userInfo.isAdmin %}
+                                <p>
+                                  <span class="colDaanger info">你好，管理员韩硕帅哥！</span>
+                                  <a href="/admin">进入管理</a>
+                                </p>
+                                {% else %}                                                                                            <p><span class="colDaanger info">你好！欢迎光临韩硕的博客！</span></p>
+                                {% endif %}
+                                <p><span class="colDark logout"><a href="javascript:;" id="logout">退出</a></span></p>
+                              </div>
+                              {% else %}
+
+                                <div class="rightBox">
+                                    <div class="zc_y">
+                                        <span>用户名：</span>
+                                        <input name="username" type="text"/><br/>
+                                    </div>  
+
+                                    <div class="zc_y">
+                                         <span>密码：</span>
+                                         <input name="password" type="password"/>
+                                    </div>  
+                                    <br/>
+                                        <button class="zc_dl">登陆</button>
+                                        <p class="teshu">还没有账号？点击注册</p>
+                                        <p class="colWarning"></p>
+                                </div>
+
+                                <div class="zhuce" id="reg_zhuce">
+                                        <div class="zc_y">
+                                            <span>用户名：</span>
+                                            <input name="username" type="text"/><br/>
+                                        </div>  
+
+                                        <div class="zc_y">
+                                             <span>密码：</span>
+                                             <input name="password" type="password"/>
+                                        </div>  
+
+                                        <div class="zc_y">
+                                            <span>确认密码：</span>
+                                            <input name="password1" type="password"/>
+                                       </div> 
+                                        <br/>
+                                            <button class="teshu2">注册</button>
+                                            <p class="teshu1">点击登陆账号</p>
+                                        <p class="colWarning"></p>
+                                            
+                                </div>
+                                {% endif %}
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             
+             
+            <section id="blog" class="content-section">
+                <div class="section-heading">
+                    <h1>博客<br><em>全文</em></h1>
+                    <p>我是一个前端小菜鸟
+                    <br>如有不同高见，请邮箱提出宝贵意见</p>
+                </div>
+                <div class="section-content">
+                    <div class="tabs-content">
+                        <div class="wrapper">
+                            <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+                               <!-- {%for category in categories%}
+                                <a href="">{{category.name}}</a>
+                                {%endfor%} -->
+                              <!-- <li><a href="">首页</a></li> -->
+                              {%for category in categories%}
+                              <li><a data-category="{{category.id}}" href="/?category={{category.id}}#blog">{{category.name}}</a></li>
+                              <!-- <li><a href="#tab1" class="active">2018 七月</a></li>
+                              <li><a href="#tab2">2018 六月</a></li>
+                              <li><a href="#tab3">2018 五月</a></li>
+                              <li><a href="#tab4">2018 四月</a></li> -->
+                              {%endfor%}
+                            </ul>
+                            <section id="first-tab-group" class="tabgroup">
+                                <div id="tab1">
+                                    <ul>
+                                         {%block content%}{%endblock%}
+                                        
+                                    </ul>
+                                </div>
+                                <div id="tab2">
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <img src="/public/img/blog_3.jpg" alt="">
+                                                <div class="text-content">
+                                                    <h4>Sed at massa turpis</h4>
+                                                    <span>30 June 2018</span>
+                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+                                                    
+                                                    <div class="accent-button button">
+                                                        <a href="#contact">Continue Reading</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <img src="/public/img/blog_1.jpg" alt="">
+                                                <div class="text-content">
+                                                    <h4>Lorem ipsum dolor sit</h4>
+                                                    <span>24 June 2018</span>
+                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+                                                    
+                                                    <div class="accent-button button">
+                                                        <a href="#contact">Continue Reading</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <img src="/public/img/blog_2.jpg" alt="">
+                                                <div class="text-content">
+                                                    <h4>Cras commodo odio ut</h4>
+                                                    <span>12 June 2018</span>
+                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+                                                    
+                                                    <div class="accent-button button">
+                                                        <a href="#contact">Continue Reading</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="tab3">
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <img src="/public/img/blog_2.jpg" alt="">
+                                                <div class="text-content">
+                                                    <h4>Cras commodo odio ut</h4>
+                                                    <span>26 May 2018</span>
+                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+                                                    
+                                                    <div class="accent-button button">
+                                                        <a href="#contact">Continue Reading</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <img src="/public/img/blog_1.jpg" alt="">
+                                                <div class="text-content">
+                                                    <h4>Lorem ipsum dolor sit</h4>
+                                                    <span>22 May 2018</span>
+                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+                                                    
+                                                    <div class="accent-button button">
+                                                        <a href="#contact">Continue Reading</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <img src="/public/img/blog_3.jpg" alt="">
+                                                <div class="text-content">
+                                                    <h4>Integer ultrices augue</h4>
+                                                    <span>8 May 2018</span>
+                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+                                                    
+                                                    <div class="accent-button button">
+                                                        <a href="#contact">Continue Reading</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="tab4">
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <img src="/public/img/blog_1.jpg" alt="">
+                                                <div class="text-content">
+                                                    <h4>Lorem ipsum dolor sit</h4>
+                                                    <span>26 April 2018</span>
+                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+                                                    
+                                                    <div class="accent-button button">
+                                                        <a href="#contact">Continue Reading</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>                                
+                                        <li>
+                                            <div class="item">
+                                                <img src="/public/img/blog_3.jpg" alt="">
+                                                <div class="text-content">
+                                                    <h4>Integer ultrices augue eu</h4>
+                                                    <span>24 April 2018</span>
+                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+                                                    
+                                                    <div class="accent-button button">
+                                                        <a href="#contact">Continue Reading</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <img src="/public/img/blog_2.jpg" alt="">
+                                                <div class="text-content">
+                                                    <h4>Cras commodo odio ut</h4>
+                                                    <span>20 April 2018</span>
+                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+                                                    
+                                                    <div class="accent-button button">
+                                                        <a href="#contact">Continue Reading</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section> 
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="content-section">
+                <div id="map">
+                
+                	<!-- How to change your own map point
+                           1. Go to Google Maps
+                           2. Click on your location point
+                           3. Click "Share" and choose "Embed map" tab
+                           4. Copy only URL and paste it within the src="" field below
+                    
+                    map-->
+                </div>
+                <div id="contact-content">
+                    <div class="section-heading">
+                        <h1>联系<br><em>博主</em></h1>
+                        <p>如有看上我想一起工作的可以联系我哦 
+                        <br>勤勤恳恳任劳任怨积极向上的中国小青年</p>
+                        
+                    </div>
+                    <div class="section-content">
+                        <form id="contact" action="#" method="post">
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <fieldset>
+                                    <input name="name" type="text" class="form-control" id="name" placeholder="您的名字...." required="">
+                                  </fieldset>
+                                </div>
+                                <div class="col-md-4">
+                                  <fieldset>
+                                    <input name="email" type="email" class="form-control" id="email" placeholder="您的邮箱..." required="">
+                                  </fieldset>
+                                </div>
+                                 <div class="col-md-4">
+                                  <fieldset>
+                                    <input name="subject" type="text" class="form-control" id="subject" placeholder="您的主题..." required="">
+                                  </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                  <fieldset>
+                                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="您的意见" required></textarea>
+                                  </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                  <fieldset>
+                                    <button type="submit" id="form-submit" class="btn">发送邮件</button>
+                                  </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="footer">
+                <p>Copyright &copy; 2018 Company Name . Design: <a href="" target="_blank">Sentra</a> More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+            </section>
+        </div>
+
+
+
+    <script src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/public/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="/public/js/vendor/bootstrap.min.js"></script>
+    
+    <script src="/public/js/plugins.js"></script>
+    <script src=""></script>
+    
+    <script src="/public/js/main.js"></script>
+
+    <script>
+        // Hide Header on on scroll down
+        var didScroll;
+        var lastScrollTop = 0;
+        var delta = 5;
+        var navbarHeight = $('header').outerHeight();
+
+        $(window).scroll(function(event){
+            didScroll = true;
+        });
+
+        setInterval(function() {
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 250);
+
+        function hasScrolled() {
+            var st = $(this).scrollTop();
+            
+            // Make sure they scroll more than delta
+            if(Math.abs(lastScrollTop - st) <= delta)
+                return;
+            
+            // If they scrolled down and are past the navbar, add class .nav-up.
+            // This is necessary so you never see what is "behind" the navbar.
+            if (st > lastScrollTop && st > navbarHeight){
+                // Scroll Down
+                $('header').removeClass('nav-down').addClass('nav-up');
+            } else {
+                // Scroll Up
+                if(st + $(window).height() < $(document).height()) {
+                    $('header').removeClass('nav-up').addClass('nav-down');
+                }
+            }
+            
+            lastScrollTop = st;
+        }
+    </script>
+
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    
+    <script>
+      var currentCategory = '{{categoryId}}'
+      $(function(){
+        $('.tabs a').each(function() {
+          var $el = $(this)
+          if($el.data('category') == currentCategory) {
+            $el.addClass('active');
+          }
+        })
+      })
+    </script>
+</body>
+</html>
