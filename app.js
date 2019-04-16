@@ -48,13 +48,15 @@ app.use(function (req, res, next) {
 
 })
 
+const port = process.env.PORT || 8081
+
 /* 
 *根据不同的功能划分模块
 */
 app.use('/admin', require('./routers/admin'));
 app.use('/api', require('./routers/api'));
 app.use('/', require('./routers/main'));
-app.listen(8081);
+app.listen(port);
 
 //本地数据库链接
 
